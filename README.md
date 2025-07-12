@@ -9,4 +9,4 @@ This site showcases my projects, skills, and contact information.
 
 
 ## 🌐 Live Link
-[Click here to view my portfolio]()
+[Click here to view my portfolio](https://github.com/ShikhTomar/my-portfolio)

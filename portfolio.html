@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: rgb(7, 1, 48); /* Updated background color */
+        color: rgb(209, 195, 195);
+        font-family: cursive;
+    }
+    nav{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 110px;
+        background-color: rgb(98, 50, 105);
+    }
+    nav ul{
+        display: flex;
+        justify-content: center;
+    }
+    nav ul li{
+        list-style: none;
+        margin: 0 32px;
+    }
+
+    nav ul li a{
+        text-decoration: none;
+        color: rgb(204, 178, 210);
+    }
+
+    nav ul li a:hover{
+       font-size: 1.5rem;
+        color: rgb(44, 2, 77);
+    }
+    main hr{
+        border: 0;
+        background-color: rgb(81, 29, 131);
+        height: 1.5px;
+        margin: 40px 84px;
+        
+    }
+    .left{
+        font-size: 2rem;
+    }
+    .firstSection{
+        display: flex;
+        justify-content: space-around;
+       /* align-items: center; /* Vertically center */
+        margin: 80px 0;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+       
+    }
+    .firstSection > div {
+        width: 30%;
+        height: 10%;
+        margin-bottom: 0px;
+
+    }
+    .leftSection{
+        margin-top: 50px;
+        height: 220px;
+        width: 400%;
+        padding: 20px;
+        border-radius: 15px;
+        font-size: 2rem;
+        margin: 20px;
+        text-align: left;
+    }
+    .rightSection{
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        
+        margin: 20px;
+        border-radius: 15px;
+    }
+    .rightSection img{
+        margin: 0px auto 250px auto;  /* top auto bottom auto centers horizontally */
+         width: fit-content;  
+        width: 100%;
+        max-width: 300px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(219, 198, 198, 0.3);
+        transition: transform 0.3s ease;
+    }
+    .rightSection img:hover{
+        transform: scale(1.05);
+    }
+    .purple{
+      color: rgb(187, 129, 241);
+    }
+    .pink{
+        color: #d598bd;
+        font-size: larger;
+        margin-top: 5px;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        color: #fff;
+  text-shadow: 3px 3px 20px rgba(237, 53, 194, 0.8);
+       
+  color: #af8cec;
+  transform: scale(1.05);
+  transition: all 0.3s ease;  
+    }
+    .text-gray{
+        color: beige;
+    }
+    #element{
+
+        color: rgb(77, 28, 127);
+    }
+    .secondSection{
+       max-width: 80vw;
+       margin: auto;
+       height: 80vh;
+    }
+    .secondSection h1{
+        font-size: 2.0rem;
+    }
+    .aboutSection h1 {
+    color: rgb(187, 129, 241);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.aboutSection {
+    padding: 50px 20px;
+    background-color: rgb(7, 1, 48); /* same as body */
+    color: rgb(209, 195, 195);
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+.aboutSection h1 {
+    font-size: 2rem;
+    color: rgb(187, 129, 241);
+    margin-bottom: 20px;
+}
+.aboutSection p {
+    font-size: 1.1rem;
+    color: rgb(209, 195, 195);
+    line-height: 30px;
+}
+.education-box {
+    display: flex;
+    align-items: center;
+    background-color: rgb(20, 8, 61);
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.05);
+}
+
+.education-box img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-right: 20px;
+    background-color: white;
+    padding: 5px;
+}
+
+.edu-text h3 {
+    margin: 0;
+    color: rgb(239, 205, 255);
+    font-size: 1.2rem;
+}
+
+.edu-text p {
+    margin: 5px 0 0;
+    color: rgb(180, 180, 255);
+    font-size: 0.95rem;
+}
+
+.skillsSection {
+    padding: 50px 20px;
+    background-color: rgb(12, 2, 63);
+    color: rgb(209, 195, 195);
+}
+
+.skills-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+.section-heading {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: rgb(217, 205, 229);
+}
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.skill-card {
+    background-color: rgb(62, 8, 100);
+    border-radius: 15px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(43, 14, 97, 0.05);
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+.skill-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    color: rgb(248, 208, 255);
+    margin-bottom: 10px;
+}
+
+.sub-heading {
+    margin-top: 50px;
+    font-size: 1.8rem;
+    text-align: center;
+    color: rgb(239, 205, 255);
+}
+.sub-heading2{
+     margin-top: 30px;
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: rgb(105, 65, 123);
+}
+
+.programming-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.programming-icons img {
+    width: 60px;
+    transition: transform 0.3s ease;
+}
+
+.programming-icons img:hover {
+    transform: scale(1.15);
+}
+.contactSection {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1c0539, #1a084e);
+  color: white;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+  justify-content: center;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-info h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  color: #ececee;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.info-card {
+  background: rgba(28, 3, 57, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.icon {
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, #540f38, #7873f5);
+  padding: 10px;
+  border-radius: 12px;
+  color: rgb(198, 182, 182);
+}
+
+.info-card h4 {
+  margin: 0;
+  color: #fff;
+}
+
+.info-card p {
+  margin: 3px 0 0;
+  color: #ccc;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  background-color: rgba(28, 2, 62, 0.05);
+  border-radius: 12px;
+  padding: 30px;
+  backdrop-filter: blur(8px);
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #ddd;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(180, 160, 198, 0.08);
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-form button {
+  margin-top: 15px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff6ec4, #7873f5);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(to right, #70428e, #645bf4);
+}
+
+footer {
+  margin-top: 1400px;
+  background-color: #5c2269;
+  color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  font-family: , sans-serif;
+  font-size: 20px;
+}
+
+.footer-content a {
+  color: #c7a6ea;
+  margin:  80px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+  color: #9f48b9;
+}
+.social-links a {
+  font-size: 24px;
+  margin: 0 12px;
+}
+
+.social-links a:hover {
+  color: #061523; 
+}
+
+
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left"> portfolio</div>
+            <div class="right">
+                <ul>
+                   <li> <a href="#home">Home</a></li>
+                    <li> <a href="#about">About</a></li>
+                    <li> <a href="#skills">Skills</a></li>
+                    <li> <a href="#contactSection">Contact me</a></li>
+                </ul>
+            </div>
+        </nav>
+        <h1 ><span class="pink">SHIKHA TOMAR </span></h1> 
+    </header>
+    <main>
+    <section  id="home" class="firstSection">
+        <div class="leftSection">
+            Hi, My name is  <span class="purple">Shikha</span>
+          
+            <div>and I am a </div>
+            <div>ML enthusiast</div>
+            <span id="element"></span>
+           <h6>
+            Passionate about Artificial Intelligence and Machine Learning. Currently exploring the intersection of AI/ML with Data Structures & Algorithms using C++
+           </h6> 
+        </div>
+        <div class="rightSection">
+            <img src="me.jpeg" alt="My image">
+        </div>
+    </section>
+    <hr>
+    <section> 
+        <section  id="about" class="aboutSection">
+            <div style="max-width: 80vw; margin: auto; padding: 30px;">
+        <h1 style="color: rgb(226, 222, 231); font-size: 2rem; margin-bottom: 20px;">About Me</h1>
+        <p style="font-size: 1.1rem; color: rgb(209, 195, 195); line-height: 1.8;">
+            Hello! I'm <span style="color: rgb(187, 129, 241); font-weight: bold;">Shikha</span>, a passionate college student diving into the world of
+            <strong style="color: rgb(118, 33, 197);">Machine Learning</strong> and mastering
+            <strong style="color: rgb(98, 26, 165);">Data Structures & Algorithms</strong> using C++. I love building smart solutions and exploring
+            how machines learn and make decisions. I'm currently working on beginner-level ML projects and sharpening my problem-solving skills with daily coding practice.
+            I believe in learning by doing and enjoy creating things that make an impact. 
+        </p>
+        <div class="education-box">
+      <img src="edu.jpg" alt="KIET Logo">
+      <div class="edu-text">
+        <h3>B.Tech – KIET Group of Institutions</h3>
+        <p>(2024 – 2028)</p>
+        <p>CSE AI-ML</p>
+      </div>
+    </div>
+    </div> 
+        </section>
+    </section> 
+<hr>
+    <section class="secondSection">
+        <span class="text-gray"></span>
+    <section  id="skills" class="skillsSection">
+    <div class="skills-container">
+        <h1 class="section-heading">Skills & Learning</h1>
+        <div>
+        <h4 class="sub-heading2">Currently building expertise in computer science and Machine learning fundamentals</h4>
+        </div>
+        <div class="skills-grid">
+
+            <!-- Machine Learning -->
+            <div class="skill-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/10073/10073409.png" alt="ML Icon">
+                <h3>Machine Learning</h3>
+                <p>Learning the fundamentals of supervised/unsupervised learning. Working on mini projects with scikit-learn, pandas & matplotlib.</p>
+            </div>
+
+            <!-- DSA -->
+            <div class="skill-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/5453/5453965.png" alt="DSA Icon">
+                <h3>Data Structures & Algorithms</h3>
+                <p>Practicing problems in C++ and C ,Python. Solved 100+ problems involving arrays, recursion,searching and sorting techniques.</p>
+            </div>
+
+            <!-- Competitive Programming -->
+            <div class="skill-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/10462/10462258.png" alt="Competitive Programming Icon">
+                <h3>Competitive Programming</h3>
+                <p>Solving challenges on platforms like LeetCode & Codeforces to improve speed, logic, and accuracy.</p>
+            </div>
+
+        </div>
+
+        <!-- Programming Languages -->
+        <h2 class="sub-heading">Programming Languages</h2>
+        <div class="programming-icons">
+            <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="C++" title="C++">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python" title="Python">
+            <img src="ai.png.jpg" alt="machine learning" title="ML">
+        </div>
+    </div>
+</section>
+<hr>
+<section id="contactSection" class="contactSection">
+  <div class="contact-wrapper">
+    <!--left info side-->
+    <div class="contact-info">
+    <h2>Get in touch</h2>
+    <p>I'm always interested in new opportunities and exciting projects.Whether you have a question or just want to say hi,fell free to reach out!</p>
+    <div class="info-card">
+        <div class="icon"📧</div>
+        <div>
+            <h4>Email</h4>
+            <p>shikhatomar8420@gmail.com</p>
+            </div>
+      </div>
+      <div class="info-card">
+        <div class="icon">📞</div>
+        <div>
+          <h4>Phone</h4>
+          <p>+91 9259518420</p>
+        </div>
+      </div>
+      
+   <div class="info-card">
+        <div class="icon">📍</div>
+        <div>
+          <h4>Location</h4>
+          <p>Ghaziabad, India</p>
+        </div>
+      </div>
+    </div>
+<!--right section-->
+<div class="contact-form">
+      <form action="mailto:shikha@example.com" method="POST" enctype="text/plain">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or just say hello!" required></textarea>
+
+        <button type="submit">📨 Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+    </section>
+
+    </main>
+   
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+    var typed = new Typed('#element', {
+      strings: ['C++ learner', 'ML enthusiast','Python learner'],
+      typeSpeed: 50,
+    });
+  </script>
+   <footer>
+         <div class="footer-content">
+    <p>© 2025 Shikha.Tomar.</p>
+    
+    <div class="contact-info">
+      <a href="mailto:shikhatomar8420@gmail.com">shikhatomar8420@gmail.com
+         <i class="fab fa-mail"></i>
+      </a>
+    </div>
+    
+    <div class="social-links">
+      <a href="https://linkedin.com/in/shikha-tomar-a70a6b32b" target="_blank">LinkedIn
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/shikhtomar" target="_blank">GitHub
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    
+    <div class="cta">
+        <p> <a href="#contact">Let’s work together!</a></p>
+    </div>
+  </div>
+    </footer>
+</body>
+</html>
